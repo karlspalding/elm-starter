@@ -13,6 +13,7 @@
         mkShell {
           buildInputs = [
             git
+            gzip
             nodejs-16_x
           ];
         };

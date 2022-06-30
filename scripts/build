@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Elm production build script.
+#
+# Based on script from:
+#
+# https://guide.elm-lang.org/optimization/asset_size.html
+#
+
+set -e
+
+unset GZIP
+
+elm make --optimize --output="output/main.js" "src/Main.elm"
+
+uglifyjs output/main.js \
+  --compress 'pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' | \
+  uglifyjs --mangle --output "output/main.min.js"
+
+gzip -f --keep "output/main.js" "output/main.min.js"

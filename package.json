@@ -6,10 +6,11 @@
   "devDependencies": {
     "elm": "0.19.1-5",
     "elm-format": "0.8.5",
-    "elm-test": "0.19.1-revision8"
+    "elm-test": "0.19.1-revision8",
+    "uglify-js": "3.16.1"
   },
   "scripts": {
-    "build": "elm make --optimize --output output/main.js src/Main.elm",
+    "build": "./scripts/build",
     "reactor": "elm reactor",
     "format": "elm-format --yes src/ tests/",
     "test": "elm-test"

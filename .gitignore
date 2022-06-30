@@ -2,3 +2,5 @@
 /elm-stuff/
 *.swp
 output/main.js
+output/main.min.js
+*.gz
