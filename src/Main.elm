@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (Html, text)
+import Http
 
 
 main =
@@ -14,23 +15,31 @@ main =
 
 
 type Model
-    = Empty
+    = Text String
 
 
 init : () -> ( Model, Cmd Msg )
 init _ =
-    ( Empty
-    , Cmd.none
+    ( Text "Hello, World!"
+    , Http.get
+        { url = "https://example.com"
+        , expect = Http.expectString Response
+        }
     )
 
 
 type Msg
-    = Noop
+    = Response (Result Http.Error String)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
-update _ model =
-    ( model, Cmd.none )
+update message model =
+    case message of
+        Response (Ok value) ->
+            ( Text value, Cmd.none )
+
+        _ ->
+            ( model, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
@@ -39,5 +48,5 @@ subscriptions _ =
 
 
 view : Model -> Html Msg
-view _ =
-    text "Hello, World!"
+view (Text value) =
+    text value

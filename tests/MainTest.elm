@@ -11,6 +11,6 @@ suite : Test
 suite =
     test "Outputs a nice hello message." <|
         \() ->
-            Main.view Main.Empty
+            Main.view (Main.Text "Hello, World!")
                 |> Query.fromHtml
                 |> Query.has [ text "Hello, World!" ]
