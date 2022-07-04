@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1654592671,
-        "narHash": "sha256-mRUMKAjCzJz+A9Ch3VutSVc33PvTIA5T9XKmsr+H/Bk=",
+        "lastModified": 1656928725,
+        "narHash": "sha256-hMaD4+vdcMgeNDvJ9c9QiNXuzpSTQ5Vodw9pG+O0l1Y=",
         "ref": "swallsoft",
-        "rev": "dc43a5e627c6c21732697014168b5b205290bf22",
-        "revCount": 337834,
+        "rev": "dc235e84ba0ab9399343505a3b1d060566113fde",
+        "revCount": 381393,
         "type": "git",
         "url": "ssh://deploy@repos/srv/repos/nixpkgs.git"
       },

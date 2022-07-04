@@ -12,14 +12,15 @@
       devShell.x86_64-linux =
         mkShell {
           buildInputs = [
+            cypress
             git
             gzip
             nodejs-16_x
           ];
-        };
 
-        shellHook = ''
-          export NPM_CONFIG_CACHE="''${TMP}/npm"
-        '';
+          shellHook = ''
+            NPM_CONFIG_CACHE="''${TMP}/npm";
+          '';
+        };
     };
 }

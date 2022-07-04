@@ -7,12 +7,14 @@
     "elm": "0.19.1-5",
     "elm-format": "0.8.5",
     "elm-test": "0.19.1-revision8",
+    "prettier": "2.7.1",
+    "typescript": "4.7.4",
     "uglify-js": "3.16.1"
   },
   "scripts": {
     "build": "./scripts/build",
     "reactor": "elm reactor",
-    "format": "elm-format --yes src/ tests/",
+    "format": "elm-format --yes src/ tests/; prettier --write cypress",
     "test": "elm-test"
   }
 }
