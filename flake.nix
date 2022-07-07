@@ -19,7 +19,7 @@
           ];
 
           shellHook = ''
-            NPM_CONFIG_CACHE="''${TMP}/npm";
+            export NPM_CONFIG_CACHE="''${TMP}/npm";
           '';
         };
     };
